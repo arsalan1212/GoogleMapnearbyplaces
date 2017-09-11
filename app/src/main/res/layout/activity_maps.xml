@@ -1,0 +1,78 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:id="@+id/layout_search">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter place to search"
+            android:id="@+id/editText"
+            android:layout_weight="3"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:id="@+id/btnSearch"
+            android:layout_weight="1"
+            android:onClick="searchPlace"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/layout_search"
+        android:id="@+id/layout_nearbyplace">
+
+
+        <Button
+            android:id="@+id/btn_hospital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hospital"
+            android:textAllCaps="false"
+            android:onClick="searchNearByPlaces"/>
+
+        <Button
+            android:id="@+id/btn_school"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="School"
+            android:textAllCaps="false"
+            android:onClick="searchNearByPlaces"/>
+
+        <Button
+            android:id="@+id/btn_resturent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Resturent"
+            android:textAllCaps="false"
+            android:onClick="searchNearByPlaces"/>
+
+        <Button
+            android:id="@+id/btn_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="To"
+            android:onClick="searchNearByPlaces"
+            />
+    </LinearLayout>
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/layout_nearbyplace"
+    tools:context="com.example.arsalankhan.googlemapnearbyplaces.MapsActivity" />
+</RelativeLayout>
